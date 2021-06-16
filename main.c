@@ -5,7 +5,7 @@
 #include <media_data_test.h>
 #include "av_codecs.h"
 #include "sdl_test.h"
-#include "simple_player.h"
+#include "simple_yuv_player.h"
 
 #ifndef AV_WB32
 #define AV_WB32(p, val)                  \

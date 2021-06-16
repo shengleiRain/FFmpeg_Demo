@@ -1,4 +1,4 @@
-#include "simple_player.h"
+#include "simple_yuv_player.h"
 #include <libavcodec/codec.h>
 #include <libavformat/avformat.h>
 #include <libswscale/swscale.h>
