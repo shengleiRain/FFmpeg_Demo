@@ -12,6 +12,7 @@
 #define logi(...) av_log(NULL, AV_LOG_INFO, __VA_ARGS__)
 #define logw(...) av_log(NULL, AV_LOG_WARNING, __VA_ARGS__)
 #define loge(...) av_log(NULL, AV_LOG_ERROR, __VA_ARGS__)
+#define logf(...) av_log(NULL, AV_LOG_FATAL, __VA_ARGS__)
 
 static int get_audio_obj_type(int aactype){
     //AAC HE V2 = AAC LC + SBR + PS

@@ -945,7 +945,7 @@ end:
     }
 }
 
-int main(int argv, char **args)
+int main0(int argv, char **args)
 {
     // av_log_set_level(AV_LOG_INFO);
 

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.4.1)
 
 project(ffmpeg_demo)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 11) 
 set(CMAKE_CXX_FLAGS "-D__STDC_CONSTANT_MACROS")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
@@ -10,8 +10,10 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 # 并将名称保存到 DIR_SRCS 变量
 aux_source_directory(. DIR_SRC_MAIN)
 aux_source_directory(./src DIR_SRC)
+aux_source_directory(./src/player DIR_SRC_PLAYER)
 
 include_directories(./include)
+include_directories(./include/player) 
 
 
 find_path(AVCODEC_INCLUDE_DIR libavcodec/avcodec.h)
@@ -40,6 +42,6 @@ include_directories(${SDL_DIR}/include)
 # 设置要关联的库的路径
 link_directories(${SDL_DIR}/lib)
 
-add_executable(ffmpeg_demo ${DIR_SRC_MAIN} ${DIR_SRC})
+add_executable(ffmpeg_demo ${DIR_SRC_MAIN} ${DIR_SRC} ${DIR_SRC_PLAYER})
 target_include_directories(ffmpeg_demo PRIVATE ${AVCODEC_INCLUDE_DIR} ${AVFORMAT_INCLUDE_DIR} ${AVUTIL_INCLUDE_DIR} ${AVDEVICE_INCLUDE_DIR} ${AVSWSCALE_INCLUDE_DIR} ${AVSWSAMPLE_INCLUDE_DIR})
 target_link_libraries(ffmpeg_demo PRIVATE ${AVCODEC_LIBRARY} ${AVFORMAT_LIBRARY} ${AVUTIL_LIBRARY} ${AVDEVICE_LIBRARY} ${SWSCALE_LIBRARY} ${SWSAMPLE_LIBRARY} SDL2)
